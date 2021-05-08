@@ -1,46 +1,21 @@
 import React from 'react';
-import {useState} from 'react';
+import LangCard from './LangCard';
+import {categories} from '../helpers/Data';
 
-
-const ContainerCard = (props) => {
-    const [hover, setHover] = useState(false);
-    const [flip, setFlip] = useState(false);
-
-    const handleHover = () => {
-        setHover(true);
-    }
-
-    const hanleHoverRes = () => {
-        setHover(false);
-    }
-    const handleClick = () => {
-        setFlip(!flip);
-    }
+const ContainerCard = () => {
     return (
-        <div>
-            <div className={`langs ${hover ? 'hover' : null} ${flip ? 'flip' : null}`} 
-            onClick = {handleClick}
-            onMouseEnter = {handleHover}
-            onMouseLeave = {hanleHoverRes}
-            >
-                
-                {!flip ? (
-                    <div className="front">
-                    <img className="logo" src={props.logo} alt="" />
-                    <div className="desc">{props.name}</div>
-                    </div>
-
-                ) : (
-                    <div>
-                        <ul className="back">
-                            <li>{props.options[0]}</li>
-                            <li>{props.options[1]}</li>
-                            <li>{props.options[2]}</li>
-                        </ul>
-                    </div>
-                )}
+        <div className='ContainerCard'>
+            <h2>Languages</h2>
+            {categories.map((item) => (
+                <LangCard
+                logo = {item.img}
+                name = {item.name}
+                desc = {item.options[0]}
+                date = {item.options[1]}
+                author = {item.options[2]}
+                />
+            ))}
         </div>
-    </div>
     );
 }
 

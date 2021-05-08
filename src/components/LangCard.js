@@ -1,28 +1,33 @@
-import React from 'react';
-import '../App.scss';
-import ContainerCard from '../components/ContainerCard';
-import reactImg from "../components/images/react.svg";
-import {categories} from '../helpers/Data';
+import React, {useState} from 'react';
 
-function Main() {
-const arr = categories.map((item) => (
-  <ContainerCard name = {item.name} logo = {item.img} options = {item.options} />
-));
+const LangCard = ({logo, name, desc, date, author}) => {
+  const [flip, setFlip] = useState(false); 
+  const handleClick = () => {
+    setFlip(!flip);
+  };
 
   return (
-    <div className="main">
-    <div className="header">
-      <img className="top_img" src={reactImg} alt="" />
+    <div className="LangCard" onClick = {handleClick}>
+      {!flip ? (
+        <>
+        <div className="logo">
+          <img src={logo} alt="" />
+        </div>
+        <div className="name">
+          <h3>{name}</h3>
+        </div>
+        </>
+      ) : (
+        <div className="back">
+          <ul>
+            <li>{desc}</li>
+            <li>{date}</li>
+            <li>{author}</li>
+          </ul>
+        </div>
+      )}
     </div>
-    <div className="card">
-      <div className="ribbon"></div>
-      <div className="box">
-        <h1 className="title">Languages</h1>
-        {arr}
-      </div>
-    </div>
-  </div>
   );
 }
 
-export default Main;
+export default LangCard;

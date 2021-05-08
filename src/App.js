@@ -1,11 +1,16 @@
-import Main from './components/LangCard';
+import React from 'react';
 import './App.scss';
+import reactImg from './images/react.svg';
+import ContainerCard from './components/ContainerCard'
 
 
 function App() {
   return (
     <div className="App">
-      <Main/>
+      <div className="top_part">
+        <img src={reactImg} alt="" />
+      </div>
+      <ContainerCard/>
     </div>
   );
 }
