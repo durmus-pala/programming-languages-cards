@@ -1,11 +1,11 @@
-import css from "../helpers/css.png";
-import python from "../helpers/python.png";
-import java from "../helpers/java.png";
-import cpp from "../helpers/cpp.png";
-import go from "../helpers/go.png";
-import php from "../helpers/php.png";
-import javascript from "../helpers/javascript.png";
-import html from "../helpers/html.png";
+import css from "../components/images/css.png";
+import python from "../components/images/python.png";
+import java from "../components/images/java.png";
+import cpp from "../components/images/cpp.png";
+import go from "../components/images/go.png";
+import php from "../components/images/php.png";
+import javascript from "../components/images/javascript.png";
+import html from "../components/images/html.png";
 
 export const categories = [
   {
